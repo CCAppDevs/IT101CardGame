@@ -8,7 +8,7 @@ namespace IT101CardGame
 {
     public class Deck
     {
-        private List<Card> Cards;
+        public List<Card> Cards { get; private set; }
 
         public Deck(bool init = true)
         {
@@ -77,6 +77,21 @@ namespace IT101CardGame
         public void AddCard(Card card)
         {
             Cards.Add(card);
+        }
+
+        public int GetTotal()
+        {
+            // bucket to hold the total
+            int total = 0;
+
+            // loop over all cards in the deck
+            for (int i = 0; i < Cards.Count; i++)
+            {
+                // add the card's value to the total
+                total += Cards[i].GetValue();
+            }
+
+            return total;
         }
     }
 }

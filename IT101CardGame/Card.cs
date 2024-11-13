@@ -22,6 +22,20 @@ namespace IT101CardGame
             return $"{ RankToString() } of { Suit }";
         }
 
+        public int GetValue()
+        {
+            if (Rank >= 11)
+            {
+                return 10;
+            }
+            else if (Rank == 1)
+            {
+                return 11;
+            }
+
+            return Rank;
+        }
+
         private string RankToString()
         {
             string value = "";
